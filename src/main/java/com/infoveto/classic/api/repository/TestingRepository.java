@@ -1,6 +1,6 @@
-package com.infoveto.classic.api.Repository;
+package com.infoveto.classic.api.repository;
 
-import com.infoveto.classic.api.Entity.TestingEntity;
+import com.infoveto.classic.api.entity.TestingEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
