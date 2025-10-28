@@ -1,8 +1,8 @@
-package com.infoveto.classic.api.Controller;
+package com.infoveto.classic.api.controller;
 
 import com.infoveto.classic.api.ApiApplication;
-import com.infoveto.classic.api.Entity.TestingEntity;
-import com.infoveto.classic.api.Service.TestingService;
+import com.infoveto.classic.api.entity.TestingEntity;
+import com.infoveto.classic.api.service.TestingService;
 import jakarta.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +21,7 @@ public class TestingController {
     private TestingService testingService;
 
     @GetMapping("/user/{username}")
-    public ResponseEntity<?> findByUsername(@PathVariable String username){
+    public ResponseEntity<List<TestingEntity>> findByUsername(@PathVariable String username){
         try {
             logger.info("[USER CONTROLLER] Find by username calling with username:" + username +" ! ");
             return ResponseEntity.ok().body(testingService.findAllByUsername(username));
@@ -32,7 +32,7 @@ public class TestingController {
     }
 
     @GetMapping("")
-    public ResponseEntity<?> findAll(){
+    public ResponseEntity<List<TestingEntity>> findAll(){
         try{
             return ResponseEntity.ok().body(testingService.findAll());
         }catch (RuntimeException e) {
@@ -42,7 +42,7 @@ public class TestingController {
     }
 
     @PostMapping("/user/{mail}")
-    public ResponseEntity<?> findByMail(@PathVariable String mail){
+    public ResponseEntity<List<TestingEntity>> findByMail(@PathVariable String mail){
         try{
             logger.info("[USER CONTROLLER] Find by username calling with email:" + mail +" ! ");
             List<TestingEntity> res = testingService.findAllByUserMail(mail);

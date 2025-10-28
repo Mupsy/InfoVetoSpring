@@ -1,8 +1,8 @@
-package com.infoveto.classic.api.Service;
+package com.infoveto.classic.api.service;
 
 import com.infoveto.classic.api.ApiApplication;
-import com.infoveto.classic.api.Entity.TestingEntity;
-import com.infoveto.classic.api.Repository.TestingRepository;
+import com.infoveto.classic.api.entity.TestingEntity;
+import com.infoveto.classic.api.repository.TestingRepository;
 import jakarta.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +24,7 @@ public class TestingService {
     }
 
     public List<TestingEntity> findAll() {
+        logger.info("findAll : " + repository.findAll());
         return repository.findAll();
     }
 
