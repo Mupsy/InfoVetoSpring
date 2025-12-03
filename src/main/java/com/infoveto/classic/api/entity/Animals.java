@@ -22,9 +22,10 @@ public class Animals {
     @JsonProperty("animal_id")
     private String animalId;
 
-    @Column(name = "user_id")
-    @JsonProperty("user_id")
-    private String userId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="user_id", nullable = false)
+    @JsonProperty("user")
+    private Users userId;
 
     @Column(name = "image")
     @JsonProperty("image")
