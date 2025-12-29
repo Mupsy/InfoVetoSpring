@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ArticlesFeedbackRepository extends JpaRepository<ArticlesFeedback, Long> {
+	void deleteByUserId_Id(String userId);
 }

@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AppointmentsRepository extends JpaRepository<Appointments, Long> {
+	long countByUserId_Id(String userId);
+	void deleteByUserId_Id(String userId);
+	java.util.List<Appointments> findTop5ByUserId_IdOrderByDateAppointementDesc(String userId);
 }

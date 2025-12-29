@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AnimalsRepository extends JpaRepository<Animals, Long> {
+	long countByUserId_Id(String userId);
+	void deleteByUserId_Id(String userId);
 }

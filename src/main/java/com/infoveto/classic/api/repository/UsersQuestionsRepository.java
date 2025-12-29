@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UsersQuestionsRepository extends JpaRepository<UsersQuestions, Long> {
-
+	void deleteByUserId_Id(String userId);
 }
